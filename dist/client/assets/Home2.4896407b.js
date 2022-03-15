@@ -1,6 +1,6 @@
-import { _ as _export_sfc, a as __vitePreload } from "./index.de0f5bd7.js";
-import { B as Button } from "./button.04fb9cff.js";
-import { m as defineAsyncComponent, r as reactive, o as openBlock, c as createElementBlock, b as createBaseVNode, t as toDisplayString, u as unref, d as createVNode, w as withCtx, F as Fragment, p as pushScopeId, h as popScopeId, g as createTextVNode } from "./vendor.889ac436.js";
+import { _ as _export_sfc, a as __vitePreload } from "./index.ebcba6c2.js";
+import { B as Button } from "./button.48c839d8.js";
+import { m as defineAsyncComponent, r as reactive, o as openBlock, c as createElementBlock, b as createBaseVNode, t as toDisplayString, u as unref, d as createVNode, w as withCtx, F as Fragment, p as pushScopeId, h as popScopeId, g as createTextVNode } from "./vendor.240e5822.js";
 var _imports_0 = "/assets/logo.03d6d6da.png";
 var foo = { msg: "hi" };
 const msg = "[success] from conventional virtual file";
@@ -8,7 +8,7 @@ var Home2_vue_vue_type_style_index_0_scoped_true_lang = "";
 function __variableDynamicImportRuntime1__(path) {
   switch (path) {
     case "../components/ImportType.vue":
-      return __vitePreload(() => import("./ImportType.7e29e117.js"), true ? ["assets/ImportType.7e29e117.js","assets/vendor.889ac436.js"] : void 0);
+      return __vitePreload(() => import("./ImportType.e2f6aa34.js"), true ? ["assets/ImportType.e2f6aa34.js","assets/vendor.240e5822.js"] : void 0);
     default:
       return new Promise(function(resolve, reject) {
         (typeof queueMicrotask === "function" ? queueMicrotask : setTimeout)(reject.bind(null, new Error("Unknown variable dynamic import: " + path)));
@@ -36,7 +36,7 @@ const _hoisted_9 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createBase
 const _sfc_main = {
   setup(__props) {
     const ImportType = load("ImportType");
-    const Foo = defineAsyncComponent(() => __vitePreload(() => import("./Foo.eb2936c8.js"), true ? ["assets/Foo.eb2936c8.js","assets/Foo.a8752494.css","assets/vendor.889ac436.js"] : void 0).then((mod) => mod.Foo));
+    const Foo = defineAsyncComponent(() => __vitePreload(() => import("./Foo.678c6066.js"), true ? ["assets/Foo.678c6066.js","assets/Foo.a8752494.css","assets/vendor.240e5822.js"] : void 0).then((mod) => mod.Foo));
     function load(file) {
       return defineAsyncComponent(() => __variableDynamicImportRuntime1__(`../components/${file}.vue`));
     }

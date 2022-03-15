@@ -1,30 +1,51 @@
 <script setup>
+    import { __setupComs } from '../mixin/__setupComs.js'
     import { storeTest } from '../store/storeTest.js'
 </script>
 
 <template>
-    <h1>Page B: {{count}}</h1>
-    <button @click="update">update</button>
+    <h1>Page B: count = {{count}}</h1>
+    <button @click="updateCount">Update Count</button>
+    <button @click="send_eventBus">Send Event</button>
 </template>
 
 <script>
     export default {
+        destroyed: function () { __setupComs.destroyed(this); },
+        created: function () { __setupComs.created(this); },
+        mounted: function () {
+            __setupComs.mounted(this);
+        },
+        //--------------------------------------------------------
         data() {
             return {
                 count: storeTest.count
             }
         },
-        watch: {
-            'storeTest.count': function (newVal, oldVal) {
-                console.log('Page B: ', newVal);
-                this.count = newVal;
-            }
-        },
         methods: {
-            update: function () {
+            '*': function (m) {
+                console.log('PageB.Vue: [*] = ', m.data);
+            },
+            'storeTest.count': function (m) {
+                console.log('PageB.Vue: storeTest.count = ', m);
+                this.count = m.data;
+            },
+            send_eventBus: function () {
+                this.__sendMessage({
+                    send_id: this.__id,
+                    callback: '*',
+                    data: new Date().getTime()
+                });
+            },
+            updateCount: function () {
                 const k = new Date().getTime();
                 this.count = k;
-                storeTest.update(k);
+                storeTest.updateCount({
+                    send_id: this.__id,
+                    callback: 'storeTest.count',
+                    type: '',
+                    data: k
+                });
             }
         }
     }

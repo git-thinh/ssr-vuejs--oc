@@ -1,4 +1,4 @@
-import { l as defineComponent, d as createVNode, g as createTextVNode } from "./vendor.889ac436.js";
+import { l as defineComponent, d as createVNode, g as createTextVNode } from "./vendor.240e5822.js";
 var foo = "";
 const Foo = defineComponent({
   name: "foo",

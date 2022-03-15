@@ -14,7 +14,7 @@
     "debug": "node --inspect-brk server"
   },
   "dependencies": {
-    "example-external-component": "file:example-external-component",
+    "lodash": "^4.17.21",
     "vite": "^2.8.6",
     "vue": "^3.2.25",
     "vue-router": "^4.0.0",

@@ -1,35 +1,47 @@
+<script setup>
+    import { __setupComs } from '../mixin/__setupComs.js'
+    import { storeTest } from '../store/storeTest.js'
+</script>
+
 <template>
-    <h1>{{ foo }}</h1>
-    <h1>Store Vuex: {{ vx }}</h1>
-    <button @click="update_vx">update vuex</button>
+    <h1>Store: count = {{ count }}</h1>
+    <button @click="updateCount">Update Count</button>
+    <button @click="send_eventBus">Send Event</button>
 </template>
 
 <script>
-    //import { createStore } from 'vuex'
-    import { storeVuex } from '../store/storeVuex.js'
 
     export default {
-        //async setup() {
-        //    const store = createStore({
-        //        state: {
-        //            foo: 'bar'
-        //        }
-        //    })
-        //    return store.state
-        //}
-        data: function () {
-            return {
-                foo: 'bar',
-                vx: storeVuex.state.count
-            }
+        destroyed: function () { __setupComs.destroyed(this); },
+        created: function () { __setupComs.created(this); },
+        mounted: function () {
+            __setupComs.mounted(this);
         },
+        //--------------------------------------------------------
+        data: function () { return { count: 555 } },
         methods: {
-            update_vx: function () {
+            '*': function (m) {
+                console.log('Store.Vue: [*] = ', m.data);
+            },
+            'storeTest.count': function (m) {
+                console.log('Store.Vue: storeTest.count = ', m);
+                this.count = m.data;
+            },
+            send_eventBus: function () {
+                this.__sendMessage({
+                    send_id: this.__id,
+                    callback: '*',
+                    data: new Date().getTime()
+                });
+            },
+            updateCount: function () {
                 const k = new Date().getTime();
-                storeVuex.dispatch('update', k);
-                //this.$store.commit('increment')
-                console.log('Store Vuex: ', storeVuex.state.count);
-                this.vx = storeVuex.state.count;
+                this.count = k;
+                storeTest.updateCount({
+                    send_id: this.__id,
+                    callback: 'storeTest.count',
+                    data: k
+                });
             }
         }
     }

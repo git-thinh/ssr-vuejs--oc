@@ -1,4 +1,4 @@
-import { l as defineComponent, d as createVNode } from "./vendor.889ac436.js";
+import { l as defineComponent, d as createVNode } from "./vendor.240e5822.js";
 var button = "";
 var Button = defineComponent({
   setup() {

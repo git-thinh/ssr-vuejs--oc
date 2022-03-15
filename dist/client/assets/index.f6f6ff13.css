@@ -6,10 +6,10 @@
         font-display: swap;
         src: url('/assets/Inter-Italic.bab4e808.woff2#iefix') format('woff2'), url('/assets/Inter-Italic.7b187d57.woff') format('woff');
 }
-.inter[data-v-2cfddf34] {
+.inter[data-v-f39e144a] {
         font-family: 'Inter';
 }
-#app[data-v-2cfddf34] {
+#app[data-v-f39e144a] {
         font-family: Avenir, Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -17,7 +17,7 @@
         color: #2c3e50;
         margin-top: 60px;
 }
-nav[data-v-2cfddf34] {
+nav[data-v-f39e144a] {
         width: 500px;
         display: flex;
         padding: 20px;
@@ -29,7 +29,7 @@ nav[data-v-2cfddf34] {
         margin-top: 20px;
         border-radius: 4px;
 }
-nav a[data-v-2cfddf34] {
+nav a[data-v-f39e144a] {
             color: white;
             font-weight: bold;
             text-decoration: none;
